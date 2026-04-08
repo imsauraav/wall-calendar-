@@ -1,22 +1,63 @@
-# Wall Calendar — React Component
+# 📅 Wall Calendar
 
-A polished, interactive wall calendar component inspired by a physical wall calendar design.
+An interactive React calendar inspired by physical wall calendars — with date range selection, integrated notes, theme switching, and scenic hero images.
 
-## Features
+---
 
-- **Wall calendar aesthetic** — hero image + month badge panel, mirroring a physical calendar layout
-- **Day range selector** — click to set start, hover to preview, click again to confirm end date
-- **Visual states** — distinct styles for start, end, in-range, today, Saturday, Sunday, and holidays
-- **Per-month notes** — notes persist per month as you navigate; tagged pills show months with saved notes
-- **5 colour themes** — Ocean, Forest, Terracotta, Lavender, Slate (updates CSS variables live)
-- **Photo upload** — click the hero image to upload your own photo
-- **Quick image picks** — 4 curated Unsplash photos for instant swapping
-- **Holiday markers** — Indian public holidays shown with subtle dots
-- **Fully responsive** — two-column desktop, stacked mobile layout
-- **Dark mode** — respects `prefers-color-scheme`
-- **Accessible** — keyboard navigation, ARIA roles/labels, focus rings
+## ✨ Features
 
-## Project Structure
+| Feature | Description |
+|---|---|
+| 🖼 Wall Calendar Aesthetic | Spiral binding, diagonal-cut hero image, clean date grid |
+| 🗓 Date Range Selector | Click start → hover preview → click end. Visual states for start, in-between, and end days |
+| 📝 Integrated Notes | Attach notes to a specific month or a selected date range |
+| 🎨 4 Color Themes | Alpine (blue), Forest (green), Sunset (red), Dusk (purple) |
+| 🖼 12 Scenic Images | Unique landscape photo auto-loads for each month |
+| 🎉 Holiday Markers | Dots on holidays with a legend below the grid |
+| 📱 Fully Responsive | Desktop side-by-side layout collapses to vertical stack on mobile |
+| ✨ Page-Flip Animation | Smooth flip transition when changing months |
+
+---
+
+## 🖥 Preview
+
+> Calendar with spiral binding, scenic hero image, date range selection highlighted in blue, and notes panel on the left.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js v16 or higher — [Download here](https://nodejs.org)
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/imsauraav/wall-calendar-.git
+
+# 2. Navigate to the project folder
+cd wall-calendar-
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm start
+```
+
+Open **http://localhost:3000** in your browser. 🎉
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## 📁 Project Structure
 
 ```
 src/
@@ -52,56 +93,73 @@ src/
         └── ImagePicker.module.css
 ```
 
-## Getting Started
+---
 
-```bash
-npm install
-npm start
-```
+## 🎯 How to Use
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+**Navigate months** — Click the `‹` `›` arrows on the hero image, or click any dot in the footer.
 
-## Using the Component
+**Select a date range**
+1. Click any day → it becomes the start date
+2. Hover over other days to preview the range live
+3. Click another day → it becomes the end date
+4. Click **"Clear selection"** to reset
 
-```jsx
-import WallCalendar from './components/WallCalendar';
+**Add notes**
+- With no range selected → note saves to the current month
+- With a range selected → note saves to that specific range
+- Press `Enter` to save, or click **"Save Note"**
 
-function App() {
-  return <WallCalendar />;
-}
-```
+**Switch themes** — Click any colored dot at the top right of the page.
 
-### Extending the component
+---
 
-**Add more holidays** — edit `HOLIDAYS` in `src/utils/calendarUtils.js`:
+## 🛠 Customization
+
+### Change Themes
+
+Edit the `THEMES` array in `WallCalendar.jsx`:
+
 ```js
-export const HOLIDAYS = {
-  '12/31': 'New Year\'s Eve',
-  // month/day: 'Label'
-};
+const THEMES = [
+  { name: "Alpine",  accent: "#1a7fe0", accentLight: "#e3f0fc" },
+  { name: "Forest",  accent: "#2d7d46", accentLight: "#e6f4ea" },
+  // Add your own theme here ↓
+  { name: "Ocean",   accent: "#0077b6", accentLight: "#caf0f8" },
+];
 ```
 
-**Add more themes** — extend `THEMES` in `calendarUtils.js`:
+### Change Hero Images
+
+Replace any URL in the `MONTH_IMAGES` array with your own image:
+
 ```js
-export const THEMES = [
-  { name: 'Rose', main: '#c2185b', light: 'rgba(194,24,91,0.12)', dark: '#880e4f' },
+const MONTH_IMAGES = [
+  { url: "https://your-image-url.com/january.jpg", label: "Your Label" },
   // ...
 ];
 ```
 
-**Persist notes** — replace `useState` in `useNotes.js` with `localStorage`:
+### Add / Edit Holidays
+
+Edit the `HOLIDAYS` object — key format is `"month-day"`:
+
 ```js
-const [notes, setNotes] = useState(() => {
-  try { return JSON.parse(localStorage.getItem('cal-notes') || '{}'); }
-  catch { return {}; }
-});
-// In setNote, also call localStorage.setItem('cal-notes', JSON.stringify(updated));
+const HOLIDAYS = {
+  "1-26": "Republic Day",     // January 26
+  "8-15": "Independence Day", // August 15
+  // ...
+};
 ```
 
-## Build for Production
+---
 
-```bash
-npm run build
-```
+## 🧰 Tech Stack
 
-Output goes to the `build/` folder, ready to serve statically.
+- **React 18** — UI framework
+- **Create React App** — Project scaffolding
+- **Plain CSS** — No external UI library
+
+---
+
+Made with ❤️
