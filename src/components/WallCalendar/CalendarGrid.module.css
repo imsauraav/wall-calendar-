@@ -1,0 +1,27 @@
+.wrap { flex: 1; display: flex; flex-direction: column; }
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 10px;
+  text-align: center;
+  padding: 4px 0;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  letter-spacing: 0.5px;
+}
+
+.sat { color: var(--sat-color) !important; }
+.sun { color: var(--sun-color) !important; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  flex: 1;
+}

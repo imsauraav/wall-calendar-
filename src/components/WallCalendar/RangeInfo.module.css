@@ -1,0 +1,51 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  margin-bottom: 0.6rem;
+  min-height: 32px;
+  font-family: var(--font-body);
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--text-hint);
+}
+
+.rangeLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  flex: 1;
+}
+
+.badge {
+  font-size: 10px;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.clear {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--text-hint);
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  font-family: var(--font-body);
+  line-height: 1;
+}
+
+.clear:hover {
+  color: var(--text);
+  background: var(--border);
+}

@@ -1,0 +1,96 @@
+.day {
+  height: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-family: var(--font-body);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  color: var(--text);
+  border: 1px solid transparent;
+  transition: background 0.12s, color 0.12s, transform 0.1s;
+  user-select: none;
+  outline: none;
+}
+
+.day:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.day:hover:not(.otherMonth) {
+  background: var(--surface);
+}
+
+.day:active:not(.otherMonth) {
+  transform: scale(0.93);
+}
+
+.num { line-height: 1; }
+
+.otherMonth {
+  color: var(--text-hint);
+  cursor: default;
+  font-size: 11px;
+}
+.otherMonth:hover { background: transparent; }
+
+.today {
+  font-weight: 500;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.sat { color: var(--sat-color); }
+.sun { color: var(--sun-color); }
+
+.selStart {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+  border-radius: 6px 0 0 6px;
+}
+
+.selEnd {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+  border-radius: 0 6px 6px 0;
+}
+
+.selSingle {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+  border-radius: 6px;
+}
+
+.inRange {
+  background: var(--accent-light) !important;
+  color: var(--accent-dark) !important;
+  border-radius: 0;
+}
+
+.holiday .dot,
+.day .dot {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--sun-color);
+}
+
+.selStart .dot,
+.selEnd .dot,
+.selSingle .dot {
+  background: rgba(255,255,255,0.8);
+}
+
+@media (max-width: 480px) {
+  .day { height: 32px; font-size: 11px; }
+}
