@@ -22,6 +22,7 @@ An interactive React calendar inspired by physical wall calendars — with date 
 ## 🖥 Preview
 
 > Calendar with spiral binding, scenic hero image, date range selection highlighted in blue, and notes panel on the left.
+<img width="1173" height="716" alt="image" src="https://github.com/user-attachments/assets/1a3238e4-49ef-4d29-8730-40e287f2fcbb" />
 
 ---
 
